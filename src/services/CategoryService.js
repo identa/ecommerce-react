@@ -12,6 +12,6 @@ const getById = (id) => {
 }
 
 export default {
-    getByCategory,
-    getById
+    getById,
+    getAll
 }

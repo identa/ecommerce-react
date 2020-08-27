@@ -1,7 +1,16 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
+import CategoryService from "./services/CategoryService";
 
 function Header() {
+  const [cats, setCats] = useState([])
+
+  useEffect(() => {
+    CategoryService.getAll()
+    .then(res => setCats(res.data))
+    .catch(err => console.log(err))
+  }, [])
+
   let isShown = false
 
   const onClickCategory = e => {
@@ -69,7 +78,15 @@ function Header() {
                   Pages
                 </a>
                 <div className="dropdown-menu mt-3" aria-labelledby="pagesDropdown">
-                  <a
+                  {cats.map((cat,index) => 
+                    (<Link
+                    className="dropdown-item border-0 transition-link"
+                    to={"/category/" + cat._id}
+                  >
+                    {cat.name}
+                  </Link>)
+                  )}
+                  {/* <a
                     className="dropdown-item border-0 transition-link"
                     href="index.html"
                   >
@@ -98,7 +115,7 @@ function Header() {
                     href="checkout.html"
                   >
                     Checkout
-                  </a>
+                  </a> */}
                 </div>
               </li>
             </ul>

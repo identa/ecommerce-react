@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation, Link } from 'react-router-dom'
 
-function Hero(props) {
+function Hero() {
     let pathname = useLocation().pathname;
     if (pathname === '/') {
       return (
@@ -16,7 +16,7 @@ function Hero(props) {
           </div>
         </section>
   )
-    } else if(pathname === '/category') {
+    } else if(pathname.includes('/category')) {
       return (
       <section class="py-5 bg-light">
           <div class="container">

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import ProductService from '../services/ProductService'
 import ProductItem from "../product/ProductItem";
 
-function ShopList() {
+function ShopList({catId}) {
   const [products, setProducts] = useState([])
 
 
   useEffect(() => {
-    ProductService.getByCategory("5f44a3b9865e2b33189c0580")
+    ProductService.getByCategory(catId)
     .then(res => setProducts(res.data))
     .catch(err => console.log(err))
   }, [])
@@ -41,7 +41,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-1.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-1.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -57,7 +57,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-2.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-2.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -73,7 +73,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-primary">New</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-3.jpg" alt="..."/></a>
+                <div className="badge text-white badge-primary">New</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-3.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -89,7 +89,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-4.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-4.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -105,7 +105,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-info">Sale</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-5.jpg" alt="..."/></a>
+                <div className="badge text-white badge-info">Sale</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-5.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -121,7 +121,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-6.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-6.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -137,7 +137,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-7.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-7.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -153,7 +153,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-8.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-8.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -169,7 +169,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-danger">Sold</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-9.jpg" alt="..."/></a>
+                <div className="badge text-white badge-danger">Sold</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-9.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -185,7 +185,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-primary">New</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-10.jpg" alt="..."/></a>
+                <div className="badge text-white badge-primary">New</div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-10.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -201,7 +201,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-11.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-11.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>
@@ -217,7 +217,7 @@ function ShopList() {
           <div className="col-lg-4 col-sm-6">
             <div className="product text-center">
               <div className="mb-3 position-relative">
-                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="img/product-12.jpg" alt="..."/></a>
+                <div className="badge text-white badge-"></div><a className="d-block" href="detail.html"><img className="img-fluid w-100" src="/img/product-12.jpg" alt="..."/></a>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline">
                     <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li>

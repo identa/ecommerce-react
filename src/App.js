@@ -14,6 +14,7 @@ import Newsletter from "./home/Newsletter";
 import Footer from "./Footer";
 import ShopSidebar from "./shop/ShopSidebar";
 import ShopList from "./shop/ShopList";
+import Category from "./Category";
 
 function App() {
   return (
@@ -21,30 +22,8 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/" exact>
-            <Modal />
-            <div className="container">
-              <Hero />
-              <Categories />
-              <Trending />
-              <Services />
-              <Newsletter />
-            </div>
-          </Route>
-          <Route path="/category">
-            <Modal />
-            <div className="container">
-              <Hero />
-              <section class="py-5">
-                <div class="container p-0">
-                  <div class="row">
-                    <ShopSidebar />
-                    <ShopList/>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </Route>
+          <Route path="/" exact component={Home}/>
+          <Route path="/category/:catId" component={Category}/>   
         </Switch>
         <Footer />
       </div>
