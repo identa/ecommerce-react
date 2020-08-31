@@ -1,5 +1,6 @@
 import React from "react";
 import LazyImage from "../images/LazyImage";
+import { Link } from "react-router-dom";
 
 function ProductItem({ data }) {
   return (
@@ -7,9 +8,9 @@ function ProductItem({ data }) {
       <div className="product text-center">
         <div className="mb-3 position-relative">
           <div className="badge text-white badge-primary">{data.tag}</div>
-          <a className="d-block" href="detail.html">
+          <Link className="d-block" to={"/product/" + data._id}>
             <LazyImage src={data.imgs[0]} alt={"..."} />
-          </a>
+          </Link>
           <div className="product-overlay">
             <ul className="mb-0 list-inline">
               <li className="list-inline-item m-0 p-0">

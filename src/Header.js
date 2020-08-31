@@ -133,9 +133,9 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/signin">
                   <i className="fas fa-user-alt mr-1 text-gray"></i>Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

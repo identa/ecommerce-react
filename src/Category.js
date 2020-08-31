@@ -3,10 +3,13 @@ import Modal from './home/Modal'
 import Hero from './home/Hero'
 import ShopSidebar from './shop/ShopSidebar'
 import ShopList from './shop/ShopList'
+import Header from './Header'
+import Footer from './Footer'
 
 function Category(props) {
     return (
         <>
+        <Header/>
         <Modal />
             <div className="container">
               <Hero />
@@ -19,6 +22,8 @@ function Category(props) {
                 </div>
               </section>
             </div>
+            <Footer />
+
             </>
     )
 }
