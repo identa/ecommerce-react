@@ -25,7 +25,7 @@ function ProductDetail(props) {
 
   const onDec = (e) => {
     // target = e.target
-    
+     
   }
 
   useEffect(() => {
