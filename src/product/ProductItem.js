@@ -8,8 +8,8 @@ function ProductItem({ data }) {
       <div className="product text-center">
         <div className="mb-3 position-relative">
           <div className="badge text-white badge-primary">{data.tag}</div>
-          <Link className="d-block" to={"/product/" + data._id}>
-            <LazyImage src={data.imgs[0]} alt={"..."} />
+          <Link className="d-block" to={"/product/" + data.id}>
+            <LazyImage src={data.image_urls[0]} alt={"..."} />
           </Link>
           <div className="product-overlay">
             <ul className="mb-0 list-inline">
@@ -40,7 +40,7 @@ function ProductItem({ data }) {
             {data.name}
           </a>
         </h6>
-        <p className="small text-muted">{data.unit + data.price}</p>
+        <p className="small text-muted">{"$" + data.price}</p>
       </div>
     </div>
   );

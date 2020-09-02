@@ -16,7 +16,7 @@ function Hero() {
           </div>
         </section>
   )
-    } else if(pathname.includes('/category')) {
+    } else if(pathname.includes('/categories')) {
       return (
       <section class="py-5 bg-light">
           <div class="container">

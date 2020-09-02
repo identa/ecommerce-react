@@ -22,9 +22,15 @@ function ProductDetail(props) {
   const onItemClick = (e, index) => {
     slideRef.current.slickGoTo(index)
   }
+
+  const onDec = (e) => {
+    // target = e.target
+    
+  }
+
   useEffect(() => {
     ProductService.getById(props.match.params.productId)
-      .then((res) => setProduct(res.data))
+      .then((res) => setProduct(res.data.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -70,7 +76,7 @@ function ProductDetail(props) {
                         alt="..."
                       />
                     </div> */}
-                    {product.imgs && product.imgs.map((img, index) => 
+                    {product.image_urls && product.image_urls.map((img, index) => 
                     <div className="owl-thumb-item flex-fill mb-2" onClick={(e) => onItemClick(e, index)}>
                       <img
                         className="w-100"
@@ -130,7 +136,7 @@ function ProductDetail(props) {
                         alt="..."
                       />
                     </a> */}
-                    {product.imgs && product.imgs.map((img, index) => 
+                    {product.image_urls && product.image_urls.map((img, index) => 
                     <a
                     className="d-block"
                     href={img}
@@ -165,13 +171,10 @@ function ProductDetail(props) {
                   <i className="fas fa-star small text-warning"></i>
                 </li>
               </ul>
-              <h1>Red digital smartwatch</h1>
-              <p className="text-muted lead">$250</p>
+                    <h1>{product.name}</h1>
+              <p className="text-muted lead">{"$" + product.price}</p>
               <p className="text-small mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut
-                ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus
-                et magnis dis parturient montes nascetur ridiculus mus.
-                Vestibulum ultricies aliquam convallis.
+                {product.desc}
               </p>
               <div className="row align-items-stretch mb-4">
                 <div className="col-sm-5 pr-sm-0">
@@ -180,7 +183,7 @@ function ProductDetail(props) {
                       Quantity
                     </span>
                     <div className="quantity">
-                      <button className="dec-btn p-0">
+                      <button className="dec-btn p-0" onClick={onDec}>
                         <i className="fas fa-caret-left"></i>
                       </button>
                       <input

@@ -7,8 +7,8 @@ function ShopList({catId}) {
 
 
   useEffect(() => {
-    ProductService.getByCategory(catId)
-    .then(res => setProducts(res.data))
+    ProductService.getAll()
+    .then(res => setProducts(res.data.data))
     .catch(err => console.log(err))
   }, [])
 
@@ -35,7 +35,7 @@ function ShopList({catId}) {
         </div>
         <div className="row">
           {products.map((prod,index) => 
-            <ProductItem data={prod} key={prod._id}/>
+            <ProductItem data={prod} key={prod.id}/>
           )}
 
           <div className="col-lg-4 col-sm-6">

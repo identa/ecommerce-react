@@ -7,7 +7,7 @@ function Header() {
 
   useEffect(() => {
     CategoryService.getAll()
-    .then(res => setCats(res.data))
+    .then(res => setCats(res.data.data))
     .catch(err => console.log(err))
   }, [])
 
@@ -81,7 +81,7 @@ function Header() {
                   {cats.map((cat,index) => 
                     (<Link
                     className="dropdown-item border-0 transition-link"
-                    to={"/category/" + cat._id}
+                    to={"/categories/" + cat.id}
                   >
                     {cat.name}
                   </Link>)
