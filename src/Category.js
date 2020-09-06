@@ -13,9 +13,9 @@ function Category(props) {
       <Modal />
       <div className="container">
         <Hero />
-        <section class="py-5">
-          <div class="container p-0">
-            <div class="row">
+        <section className="py-5">
+          <div className="container p-0">
+            <div className="row">
               <ShopSidebar />
               <ShopList catId={props.match.params.catId} />
             </div>

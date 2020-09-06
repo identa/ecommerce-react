@@ -5,12 +5,12 @@ function Hero() {
     let pathname = useLocation().pathname;
     if (pathname === '/') {
       return (
-        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style={{background: "url(img/hero-banner-alt.jpg)"}}>
-          <div class="container py-5">
-            <div class="row px-4 px-lg-5">
-              <div class="col-lg-6">
-                <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
-                <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark" href="shop.html">Browse collections</a>
+        <section className="hero pb-3 bg-cover bg-center d-flex align-items-center" style={{background: "url(img/hero-banner-alt.jpg)"}}>
+          <div className="container py-5">
+            <div className="row px-4 px-lg-5">
+              <div className="col-lg-6">
+                <p className="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
+                <h1 className="h2 text-uppercase mb-3">20% off on new season</h1><a className="btn btn-dark" href="shop.html">Browse collections</a>
               </div>
             </div>
           </div>
@@ -18,17 +18,17 @@ function Hero() {
   )
     } else if(pathname.includes('/categories')) {
       return (
-      <section class="py-5 bg-light">
-          <div class="container">
-            <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
-              <div class="col-lg-6">
-                <h1 class="h2 text-uppercase mb-0">Shop</h1>
+      <section className="py-5 bg-light">
+          <div className="container">
+            <div className="row px-4 px-lg-5 py-lg-4 align-items-center">
+              <div className="col-lg-6">
+                <h1 className="h2 text-uppercase mb-0">Shop</h1>
               </div>
-              <div class="col-lg-6 text-lg-right">
+              <div className="col-lg-6 text-lg-right">
                 <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb justify-content-lg-end mb-0 px-0">
-                    <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-                    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                  <ol className="breadcrumb justify-content-lg-end mb-0 px-0">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Shop</li>
                   </ol>
                 </nav>
               </div>

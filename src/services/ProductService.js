@@ -15,8 +15,14 @@ const getAll = () => {
     return axios.get(BASE_URL + `products`)
 }
 
+const getByPagination = (pagination) => {
+    let query = Object.entries(pagination).map(([key, val]) => `${key}=${val}`).join('&')
+    return axios.get(BASE_URL + `products?` + query)
+}
+
 export default {
     getByCategory,
     getById,
-    getAll
+    getAll,
+    getByPagination
 }
